@@ -3,7 +3,10 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="AppRPG/App.axaml" value="AppRPG/AppRPG.csproj" />
+        <entry key="AppRPG/MainWindow.axaml" value="AppRPG/AppRPG.csproj" />
         <entry key="AppRPG/PageAjoutPerso.axaml" value="AppRPG/AppRPG.csproj" />
+        <entry key="AppRPG/PageCreationPersonnage.axaml" value="AppRPG/AppRPG.csproj" />
       </map>
     </option>
   </component>

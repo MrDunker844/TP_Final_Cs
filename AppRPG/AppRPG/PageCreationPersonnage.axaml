@@ -1,0 +1,66 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AppRPG.PageCreationPersonnage">
+    <Grid ColumnDefinitions="*,*">
+        
+        <Grid Column="0" Name="AffichagePersonnage" Background="Beige" HorizontalAlignment="Left" ColumnDefinitions="*">
+            <StackPanel><TextBlock>Creation de votre personnage</TextBlock></StackPanel>
+            <Grid>
+                <Image Name="IconePersonnageCreation" Source="TheAssets/image/mage.png" Stretch="None"></Image>
+                <TextBlock Name="NomPersonnageCreation"></TextBlock>
+            </Grid>
+        
+        </Grid>
+        
+        
+        <Grid Name="ChoixPersonnage" Column="1" Background="CadetBlue" ColumnDefinitions="*">
+            <Grid Name="DroiteHautCreationPerso" RowDefinitions="*" Row="0" >
+                
+                <Grid Name="ChoixRace" RowDefinitions="*"  ColumnDefinitions="*" Row="0" VerticalAlignment="Top" >
+                    <Button Grid.Column="0" Grid.Row="0">Race1</Button>
+                    <Button Grid.Column="0" Grid.Row="1">Race2</Button>
+                    <Button Grid.Column="1" Grid.Row="0">Race3</Button>
+                    <Button Grid.Column="1" Grid.Row="1">Race4</Button>
+                    <Button Grid.Column="2" Grid.Row="0">Race5</Button>
+                    <Button Grid.Column="2" Grid.Row="1">Race6</Button>
+                </Grid>
+                
+                
+                <Grid Name="ChoixClasse" RowDefinitions="*" ColumnDefinitions="*" Row="1" >
+                    <Button Grid.Column="0" Grid.Row="0">Classe1</Button>
+                    <Button Grid.Column="0" Grid.Row="1">Classe1</Button>
+                    <Button Grid.Column="1" Grid.Row="0">Classe1</Button>
+                    <Button Grid.Column="1" Grid.Row="1">Classe1</Button>
+                    <Button Grid.Column="2" Grid.Row="0">Classe1</Button>
+                    <Button Grid.Column="2" Grid.Row="1">Classe1</Button>
+                </Grid>
+            </Grid>
+            
+            
+            <Grid Name="DroiteBasCreationPerso" RowDefinitions="*" ColumnDefinitions="*" Row="1" >
+                <Grid Name="ChoixArme" RowDefinitions="*" Row="0" VerticalAlignment="Top">
+                    <Button Grid.Column="0" Grid.Row="0">Arme1</Button>
+                    <Button Grid.Column="0" Grid.Row="1">Arme1</Button>
+                    <Button Grid.Column="1" Grid.Row="0">Arme1</Button>
+                    <Button Grid.Column="1" Grid.Row="1">Arme1</Button>
+                    <Button Grid.Column="2" Grid.Row="0">Arme1</Button>
+                    <Button Grid.Column="2" Grid.Row="1">Arme1</Button>
+                </Grid>
+                
+                
+                <Grid Name="ChoixNom" RowDefinitions="*" ColumnDefinitions="*" Row="2" >
+                    <TextBox Width="50" Height="10" Grid.Column="1">Entrez votre nom</TextBox>
+                    <Button Grid.Column="2"> Valider</Button>
+                </Grid>
+                
+                <Grid Name="valider" RowDefinitions="*"  ColumnDefinitions="*" Row="3" VerticalAlignment="Bottom">
+                    <Button>Valider Votre personnage</Button>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+    
+</UserControl>
