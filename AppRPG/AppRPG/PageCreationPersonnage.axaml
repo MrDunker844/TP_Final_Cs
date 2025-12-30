@@ -6,58 +6,58 @@
              x:Class="AppRPG.PageCreationPersonnage">
     <Grid ColumnDefinitions="*,*">
         
-        <Grid Column="0" Name="AffichagePersonnage" Background="Beige" HorizontalAlignment="Left" ColumnDefinitions="*">
-            <StackPanel><TextBlock>Creation de votre personnage</TextBlock></StackPanel>
-            <Grid>
-                <Image Name="IconePersonnageCreation" Source="TheAssets/image/mage.png" Stretch="None"></Image>
-                <TextBlock Name="NomPersonnageCreation"></TextBlock>
+        <Grid Column="0" Name="AffichagePersonnage" Background="Chocolate" ColumnDefinitions="*" RowDefinitions="2*,8*">
+            <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" ><TextBlock>Creation de votre personnage</TextBlock></StackPanel>
+            <Grid Row="1"  RowDefinitions="8*,2*">
+                <Image Name="IconePersonnageCreation"  Grid.Row="0" Source="TheAssets/image/mage.png" Stretch="Uniform"></Image>
+                <TextBlock Name="NomPersonnageCreation" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">Nom par default</TextBlock>
             </Grid>
         
         </Grid>
         
         
-        <Grid Name="ChoixPersonnage" Column="1" Background="CadetBlue" ColumnDefinitions="*">
-            <Grid Name="DroiteHautCreationPerso" RowDefinitions="*" Row="0" >
+        <Grid Name="ChoixPersonnage" Column="1" Background="CadetBlue" ColumnDefinitions="*" RowDefinitions="*,*">
+            <Grid Name="DroiteHautCreationPerso" RowDefinitions="*,*" Row="0" >
                 
-                <Grid Name="ChoixRace" RowDefinitions="*"  ColumnDefinitions="*" Row="0" VerticalAlignment="Top" >
-                    <Button Grid.Column="0" Grid.Row="0">Race1</Button>
-                    <Button Grid.Column="0" Grid.Row="1">Race2</Button>
-                    <Button Grid.Column="1" Grid.Row="0">Race3</Button>
-                    <Button Grid.Column="1" Grid.Row="1">Race4</Button>
-                    <Button Grid.Column="2" Grid.Row="0">Race5</Button>
-                    <Button Grid.Column="2" Grid.Row="1">Race6</Button>
-                </Grid>
-                
-                
-                <Grid Name="ChoixClasse" RowDefinitions="*" ColumnDefinitions="*" Row="1" >
-                    <Button Grid.Column="0" Grid.Row="0">Classe1</Button>
-                    <Button Grid.Column="0" Grid.Row="1">Classe1</Button>
-                    <Button Grid.Column="1" Grid.Row="0">Classe1</Button>
-                    <Button Grid.Column="1" Grid.Row="1">Classe1</Button>
-                    <Button Grid.Column="2" Grid.Row="0">Classe1</Button>
-                    <Button Grid.Column="2" Grid.Row="1">Classe1</Button>
+                <Grid Name="ChoixRace" RowDefinitions="*,*"  ColumnDefinitions="*,*,*" Row="0"  >
+                    <Button Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">Race1</Button>
+                    <Button Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">Race2</Button>
+                    <Button Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">Race3</Button>
+                    <Button Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">Race4</Button>
+                    <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">Race5</Button>
+                    <Button Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">Race6</Button>
+                </Grid> 
+                 
+                 
+                <Grid Name="ChoixClasse" RowDefinitions="*,*"  ColumnDefinitions="*,*,*" Row="1" >
+                    <Button Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">Classe1</Button>
+                    <Button Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">Classe1</Button>
+                    <Button Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">Classe1</Button>
+                    <Button Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">Classe1</Button>
+                    <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">Classe1</Button>
+                    <Button Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">Classe1</Button>
                 </Grid>
             </Grid>
             
             
-            <Grid Name="DroiteBasCreationPerso" RowDefinitions="*" ColumnDefinitions="*" Row="1" >
-                <Grid Name="ChoixArme" RowDefinitions="*" Row="0" VerticalAlignment="Top">
-                    <Button Grid.Column="0" Grid.Row="0">Arme1</Button>
-                    <Button Grid.Column="0" Grid.Row="1">Arme1</Button>
-                    <Button Grid.Column="1" Grid.Row="0">Arme1</Button>
-                    <Button Grid.Column="1" Grid.Row="1">Arme1</Button>
-                    <Button Grid.Column="2" Grid.Row="0">Arme1</Button>
-                    <Button Grid.Column="2" Grid.Row="1">Arme1</Button>
+            <Grid Name="DroiteBasCreationPerso" RowDefinitions="*,*,*" ColumnDefinitions="*" Row="1" >
+                <Grid Name="ChoixArme" RowDefinitions="*,*"  ColumnDefinitions="*,*,*" Row="0"  >
+                    <Button Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">Arme1</Button>
+                    <Button Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">Arme1</Button>
+                    <Button Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">Arme1</Button>
+                    <Button Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">Arme1</Button>
+                    <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">Arme1</Button>
+                    <Button Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">Arme1</Button>
                 </Grid>
                 
                 
-                <Grid Name="ChoixNom" RowDefinitions="*" ColumnDefinitions="*" Row="2" >
-                    <TextBox Width="50" Height="10" Grid.Column="1">Entrez votre nom</TextBox>
-                    <Button Grid.Column="2"> Valider</Button>
+                <Grid Name="ChoixNom" RowDefinitions="*" ColumnDefinitions="*,*" Row="1" >
+                    <TextBox Name="NomInput" Width="150" Height="10" Grid.Column="0" Margin="30" HorizontalAlignment="Left"></TextBox>
+                    <Button Name="BoutonValiderNom" Click="BoutonValiderNom_OnClick" Grid.Column="1"  Margin="30" Width="100" Height="30"> Valider</Button>
                 </Grid>
                 
-                <Grid Name="valider" RowDefinitions="*"  ColumnDefinitions="*" Row="3" VerticalAlignment="Bottom">
-                    <Button>Valider Votre personnage</Button>
+                <Grid Name="valider" RowDefinitions="*"  ColumnDefinitions="*" Row="2" VerticalAlignment="Bottom">
+                    <Button HorizontalAlignment="Center" VerticalAlignment="Center">Valider Votre personnage</Button>
                 </Grid>
             </Grid>
         </Grid>
