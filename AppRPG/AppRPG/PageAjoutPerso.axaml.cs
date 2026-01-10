@@ -1,4 +1,6 @@
+using System;
 using System.IO;
+using System.Runtime;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
@@ -8,6 +10,7 @@ namespace AppRPG;
 
 public partial class PageAjoutPerso : UserControl
 {
+    
     public PageAjoutPerso()
     {
         InitializeComponent();

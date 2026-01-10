@@ -6,6 +6,7 @@ public partial class MainWindow : Window
 {
     public PageAjoutPerso PremierePage = new PageAjoutPerso();
     public PageCreationPersonnage CreationPersonnage = new PageCreationPersonnage();
+    public PageAttributs AttributCaracter = new PageAttributs();
     public MainWindow()
     {
         InitializeComponent();
