@@ -1,0 +1,66 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AppRPG.PageCreationPersonnage">
+    <Grid ColumnDefinitions="*,*">
+        
+        <Grid Column="0" Name="AffichagePersonnage" Background="Chocolate" ColumnDefinitions="*" RowDefinitions="2*,8*">
+            <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" ><TextBlock>Creation de votre personnage</TextBlock></StackPanel>
+            <Grid Row="1"  RowDefinitions="8*,2*">
+                <Image Name="IconePersonnageCreation"  Grid.Row="0" Source="TheAssets/image/mage.png" Stretch="Uniform"></Image>
+                <TextBlock Name="NomPersonnageCreation" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">Nom par default</TextBlock>
+            </Grid>
+        
+        </Grid>
+        
+        
+        <Grid Name="ChoosePersonnage" Column="1" Background="CadetBlue" ColumnDefinitions="*" RowDefinitions="*,*">
+            <Grid Name="DroiteHautCreationPerso" RowDefinitions="*,*" Row="0" >
+                
+                <Grid Name="ChooseRace" RowDefinitions="*,*"  ColumnDefinitions="*,*,*" Row="0"  >
+                    <Button Name="ButtonRace1" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonRace1_OnClick" >Race1</Button>
+                    <Button Name="ButtonRace2" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonRace2_OnClick" >Race2</Button>
+                    <Button Name="ButtonRace3" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonRace3_OnClick">Race3</Button>
+                    <Button Name="ButtonRace4" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonRace4_OnClick">Race4</Button>
+                    <Button Name="ButtonRace5" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonRace5_OnClick">Race5</Button>
+                    <Button Name="ButtonRace6" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonRace6_OnClick">Race6</Button>
+                </Grid> 
+                 
+                 
+                <Grid Name="ChooseClass" RowDefinitions="*,*"  ColumnDefinitions="*,*,*" Row="1" >
+                    <Button  Name="ButtonClass1" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonClass1_OnClick" >Classe1</Button>
+                    <Button  Name="ButtonClass2" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonClass2_OnClick" >Classe1</Button>
+                    <Button  Name="ButtonClass3" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonClass3_OnClick" >Classe1</Button>
+                    <Button  Name="ButtonClass4" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonClass4_OnClick" >Classe1</Button>
+                    <Button  Name="ButtonClass5" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonClass5_OnClick" >Classe1</Button>
+                    <Button  Name="ButtonClass6" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonClass6_OnClick" >Classe1</Button>
+                </Grid>
+            </Grid>
+            
+            
+            <Grid Name="DroiteBasCreationPerso" RowDefinitions="*,*,*" ColumnDefinitions="*" Row="1" >
+                <Grid Name="ChooseWeapon" RowDefinitions="*,*"  ColumnDefinitions="*,*,*" Row="0"  >
+                    <Button Name="ButtonWeapon1" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonWeapon1_OnClick" >Arme1</Button>
+                    <Button Name="ButtonWeapon2" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonWeapon2_OnClick" >Arme1</Button>
+                    <Button Name="ButtonWeapon3" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonWeapon3_OnClick" >Arme1</Button>
+                    <Button Name="ButtonWeapon4" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonWeapon4_OnClick" >Arme1</Button>
+                    <Button Name="ButtonWeapon5" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonWeapon5_OnClick" >Arme1</Button>
+                    <Button Name="ButtonWeapon6" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButtonWeapon6_OnClick" >Arme1</Button>
+                </Grid>
+                
+                
+                <Grid Name="ChooseNom" RowDefinitions="*" ColumnDefinitions="*,*" Row="1" >
+                    <TextBox Name="NomInput" Width="150" Height="10" Grid.Column="0" Margin="30" HorizontalAlignment="Left"></TextBox>
+                    <Button Name="ButonConfirmName" Click="BoutonConfirmName_OnClick" Grid.Column="1"  Margin="30" Width="100" Height="30"> Valider</Button>
+                </Grid>
+                
+                <Grid Name="valider" RowDefinitions="*"  ColumnDefinitions="*" Row="2" VerticalAlignment="Bottom">
+                    <Button Name="ButonConfirmCaracter" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ButonConfirmCaracter_OnClick">Valider Votre personnage</Button>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+    
+</UserControl>

@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AppRPG.PageAjoutPerso">
-    <StackPanel Name="PageAjoutDuPerso">
-        <Button Name="BoutonAjoutPerso" HorizontalAlignment="Center" VerticalAlignment="Center">pute</Button>
-    </StackPanel>
+    <Grid Name="PageAjoutDuPerso"  Column="0" RowDefinitions="*">
+        <Button Name="BoutonAjoutPerso"  HorizontalAlignment="Center" VerticalAlignment="Center" Click="BoutonAjoutPerso_OnClick" >bouton</Button>
+    </Grid>
 </UserControl>

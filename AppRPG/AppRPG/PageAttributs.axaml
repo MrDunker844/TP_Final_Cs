@@ -1,0 +1,51 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AppRPG.PageAttributs">
+    <Grid ColumnDefinitions="*,*">
+        
+        <Grid Column="0" Name="AffichagePersonnage" Background="Chocolate" ColumnDefinitions="*" RowDefinitions="1*,9*,2*">
+            <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,5,0,0" Grid.Row="0" ><TextBlock>Statistique de votre personnage</TextBlock></StackPanel>
+            <Grid Row="1"  ColumnDefinitions="2*,3*">
+                <Image Name="IconePersonnageCreation"  Grid.Column="0" Source="TheAssets/image/mage.png" Stretch="Uniform"></Image>
+                <Grid Grid.Column="1" RowDefinitions="2*,1*,1*,1*,2*" >
+                    <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom"  ><TextBlock> competance</TextBlock></StackPanel>
+                    <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"  ><TextBlock> competance</TextBlock></StackPanel>
+                    <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"  ><TextBlock> competance</TextBlock></StackPanel>
+                    <StackPanel Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"  ><TextBlock> competance</TextBlock></StackPanel>
+                    <StackPanel Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Top"  ><TextBlock> competance</TextBlock></StackPanel>
+                </Grid>
+            </Grid>
+            <Grid Row="3"  ColumnDefinitions="2*,1*">
+                <StackPanel Grid.Column="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" ><TextBlock>Il vous reste 0 lancez</TextBlock></StackPanel>
+                <Button Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" >Lancer le déé</Button>
+            </Grid>
+        
+        </Grid>
+        
+        
+        <Grid Name="ChoosePersonnage" Column="1" Background="CadetBlue" ColumnDefinitions="*" RowDefinitions="1*,5*,4*,2*">
+            <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="0" Margin="0,5,0,0" ><TextBlock>Attributions de vos competances</TextBlock></StackPanel>
+            <Grid Name="DroiteHautCreationPerso" RowDefinitions="*,*" Row="1" >
+                
+                <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" ><TextBlock>Creation de votre personnage</TextBlock></StackPanel>
+                 
+                 
+                
+            </Grid>
+            
+            
+            <Grid Name="DroiteBasCreationPerso" RowDefinitions="*,*,*" ColumnDefinitions="*" Row="2" >
+                
+                
+                
+                <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" ><TextBlock>Creation de votre personnage</TextBlock></StackPanel>
+                
+               
+            </Grid>
+            <Button Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" >Valider</Button>
+        </Grid>
+    </Grid>
+</UserControl>
