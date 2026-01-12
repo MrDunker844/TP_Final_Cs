@@ -5,7 +5,7 @@ public class Races
     public string Name;
     public string Description;
     public string Bonus;
-    public Races(string _name,string -description, string _bonus){
+    public Races(string _name,string _description, string _bonus){
         Name = _name;
         Description = _description;
         Bonus = _bonus;
