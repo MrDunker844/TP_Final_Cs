@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace AppRPG.Models;
 
 public abstract class Classe
@@ -32,6 +34,23 @@ public abstract class Classe
             $"Agilité : {Agilite}\n" +
             $"Intelligence : {Intelligence}";
     }
+
+    public Dictionary<string, int> getAttributes()
+    {
+        return new Dictionary<string, int>
+        {
+            { "PV", Vie },
+            { "Strength", Force },
+            { "Defence", Defense },
+            { "Agility", Agilite },
+            { "Intelligence", Intelligence }
+        };
+
+
+    }
+
+
+
 }
 
 public class Guerrier : Classe

@@ -34,10 +34,10 @@
                     </Border>
                     <Button Classes="Choix" Grid.Row="1">Humain</Button>
                     <Button Classes="Choix" Grid.Row="2">Elfe</Button>
-                    <Button Classes="Choix" Grid.Row="3">Mage</Button>
-                    <Button Classes="Choix" Grid.Row="4">fée</Button>
-                    <Button Classes="Choix" Grid.Row="5"></Button>
-                    <Button Classes="Choix" Grid.Row="6"></Button>
+                    <Button Classes="Choix" Grid.Row="3">Nain</Button>
+                    <Button Classes="Choix" Grid.Row="4">Orc</Button>
+                    <Button Classes="Choix" Grid.Row="5">Dragon</Button>
+                    <Button Classes="Choix" Grid.Row="6">Démon</Button>
                 </Grid>
                 
                 <Grid Grid.Row="4" RowDefinitions="2*,1*,1*,1*,1*,1*,1*">
@@ -45,12 +45,12 @@
                     <Border>
                         
                     </Border>
-                    <Button Classes="Choix" Grid.Row="1">Humain</Button>
-                    <Button Classes="Choix" Grid.Row="2">voleur</Button>
+                    <Button Classes="Choix" Grid.Row="1">Guerrier</Button>
+                    <Button Classes="Choix" Grid.Row="2">Archer</Button>
                     <Button Classes="Choix" Grid.Row="3">Mage</Button>
-                    <Button Classes="Choix" Grid.Row="4"></Button>
-                    <Button Classes="Choix" Grid.Row="5"></Button>
-                    <Button Classes="Choix" Grid.Row="6"></Button>
+                    <Button Classes="Choix" Grid.Row="4">Tank</Button>
+                    <Button Classes="Choix" Grid.Row="5">Soigneur</Button>
+                    <Button Classes="Choix" Grid.Row="6">Assassin</Button>
                 </Grid>
                 
             </Grid>
@@ -65,7 +65,7 @@
                 </Grid.Background>
                 
                 <Border>
-                    <Grid ></Grid>
+                    <Image Name="ImageCharacter"></Image>
                 </Border>
                 
             </Grid>
