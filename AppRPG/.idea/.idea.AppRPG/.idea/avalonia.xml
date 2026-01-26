@@ -8,6 +8,11 @@
         <entry key="AppRPG/PageAjoutPerso.axaml" value="AppRPG/AppRPG.csproj" />
         <entry key="AppRPG/PageAttributs.axaml" value="AppRPG/AppRPG.csproj" />
         <entry key="AppRPG/PageCreationPersonnage.axaml" value="AppRPG/AppRPG.csproj" />
+        <entry key="AppRPG/User control/CHaracterCreationPage.axaml" value="AppRPG/AppRPG.csproj" />
+        <entry key="AppRPG/User control/CharacterCreationPage.axaml" value="AppRPG/AppRPG.csproj" />
+        <entry key="AppRPG/User control/PageAjoutPerso.axaml" value="AppRPG/AppRPG.csproj" />
+        <entry key="AppRPG/User control/PageAttributs.axaml" value="AppRPG/AppRPG.csproj" />
+        <entry key="AppRPG/User control/PageCreationPersonnage.axaml" value="AppRPG/AppRPG.csproj" />
       </map>
     </option>
   </component>

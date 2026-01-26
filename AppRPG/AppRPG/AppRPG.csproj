@@ -21,4 +21,19 @@
         </PackageReference>
         <AvaloniaResource Include="TheAssets/**"/>
     </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="User control\PageAttributs.axaml.cs">
+        <DependentUpon>PageAttributs.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="User control\PageCreationPersonnage.axaml.cs">
+        <DependentUpon>PageCreationPersonnage.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="User control\PageAjoutPerso.axaml.cs">
+        <DependentUpon>PageAjoutPerso.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
 </Project>

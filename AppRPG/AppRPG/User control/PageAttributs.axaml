@@ -9,7 +9,7 @@
         <Grid Column="0" Name="AffichagePersonnage" Background="Chocolate" ColumnDefinitions="*" RowDefinitions="1*,9*,2*">
             <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,5,0,0" Grid.Row="0" ><TextBlock>Statistique de votre personnage</TextBlock></StackPanel>
             <Grid Row="1"  ColumnDefinitions="2*,3*">
-                <Image Name="IconePersonnageCreation"  Grid.Column="0" Source="TheAssets/image/mage.png" Stretch="Uniform"></Image>
+                <Image Name="IconePersonnageCreation"  Grid.Column="0" Source="../TheAssets/image/mage.png" Stretch="Uniform"></Image>
                 <Grid Grid.Column="1" RowDefinitions="2*,1*,1*,1*,2*" >
                     <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom"  ><TextBlock> competance</TextBlock></StackPanel>
                     <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"  ><TextBlock> competance</TextBlock></StackPanel>
