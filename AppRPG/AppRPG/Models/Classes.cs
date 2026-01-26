@@ -93,3 +93,15 @@ public class Soigneur : Classe
         intelligence: 14)
     { }
 }
+
+public class Assassin : Classe
+{
+    public Assassin() : base(
+        nom: "Assassin",
+        vie: 85,
+        force: 12,
+        defense: 5,
+        agilite: 18,
+        intelligence: 6)
+    { }
+}

@@ -1,57 +1,72 @@
-namespace DefaultNamespace;
+namespace AppRPG.Models;
 
-public class Races
+public abstract class Race
 {
-    public string Name;
-    public string Description;
-    public string Bonus;
-    public Races(string _name,string _description, string _bonus){
-        Name = _name;
-        Description = _description;
-        Bonus = _bonus;
+    public string Name { get; }
+    public string Description { get; }
+    public string Bonus { get; }
+
+    protected Race(string name, string description, string bonus)
+    {
+        Name = name;
+        Description = description;
+        Bonus = bonus;
     }
+
+    public virtual string Presentation()
+        => $"Race : {Name}\nDescription : {Description}\nBonus : {Bonus}";
 }
 
-public class Humains : Races{
-    public Humains(string name) : base(
-        _name: name,
-        _description: "description humains",
-        _bonus: "bonus")
-        {}
-}
-
-public class Elfes : Races
+public class Humain : Race
 {
-    public Elfes(string name) : base(
-        _name : name,
-        _description: "description elfes",
-        _bonus: "bonus")
-    {}
+    public Humain() : base(
+        name: "Humain",
+        description: "Polyvalent et adaptable.",
+        bonus: "Bonus équilibré")
+    { }
 }
 
-public class Nains : Races
+public class Elfe : Race
 {
-    public Nains(string name) : base(
-        _name : name,
-        _description: "description nains",
-        _bonus: "bonus")
-    {}
+    public Elfe() : base(
+        name: "Elfe",
+        description: "Agile et proche de la magie.",
+        bonus: "Agilité + / Intelligence +")
+    { }
 }
 
-public class Orcs : Races
+public class Nain : Race
 {
-    public Orcs(string name) : base(
-        _name : name,
-        _description: "description orcs",
-        _bonus: "bonus")
-        {}
+    public Nain() : base(
+        name: "Nain",
+        description: "Résistant et robuste.",
+        bonus: "Défense + / Vie +")
+    { }
 }
 
-public classe Dragons : Races
+public class Orc : Race
 {
-    public Dragons(string name) : base(
-        _name: name,
-        _description: "descritpion dragon",
-        _bonus: "bonus")
-        {}
+    public Orc() : base(
+        name: "Orc",
+        description: "Puissant et agressif.",
+        bonus: "Force +")
+    { }
+}
+
+public class Dragon : Race
+{
+    public Dragon() : base(
+        name: "Dragon",
+        description: "Race rare, très puissante.",
+        bonus: "Vie + / Force + / Défense +")
+    { }
+}
+
+public class Demon : Race
+{
+    public Demon() : base(
+        name: "Démon",
+        description: "Une race maudite possédant une grande puissance, mais instable.",
+        bonus: "Force + / Intelligence + / Vie -")
+    { }
 }
