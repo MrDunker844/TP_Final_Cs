@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AppRPG.User_control.CharacterCreationPage">
-    <Grid RowDefinitions="2*,15*" ColumnDefinitions="*" >
+    <Grid RowDefinitions="2*,15*,1*" ColumnDefinitions="*" >
         <Grid.Background>
             <ImageBrush Source="../TheAssets/image/BackgroundParchment.png"
                         Stretch="UniformToFill"
@@ -16,41 +16,43 @@
              <TextBlock FontWeight="Bold" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center">CREATION DU HEROS</TextBlock>
          </Grid>
         <Grid ColumnDefinitions="1*,5*,5*,5*,1*"  RowDefinitions="14*,1*" Grid.Row="1">
-            <Grid RowDefinitions="5*,2*,1*,10*,10*" Grid.Column="1"  Margin="10,0">
+            <Grid RowDefinitions="4*,2*,1*,10*,10*" Grid.Column="1"  Margin="10,0">
                 <Grid.Background>
                     <ImageBrush Source="../TheAssets/image/BackgroundFire.png"
                                 Stretch="UniformToFill"
                                 Opacity="0.7"/>
                 </Grid.Background>
-                
-                <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">Nom par défaut</TextBlock>
-                
-                <TextBox Margin="0,10,0,10" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">ss</TextBox>
-                
-                <Grid Grid.Row="3" RowDefinitions="2*,1*,1*,1*,1*,1*,1*">
-                    <TextBlock Grid.Row="0" VerticalAlignment="Bottom">Race</TextBlock>
-                    <Border>
-                        
-                    </Border>
-                    <Button Classes="Choix" Grid.Row="1">Humain</Button>
-                    <Button Classes="Choix" Grid.Row="2">Elfe</Button>
-                    <Button Classes="Choix" Grid.Row="3">Nain</Button>
-                    <Button Classes="Choix" Grid.Row="4">Orc</Button>
-                    <Button Classes="Choix" Grid.Row="5">Dragon</Button>
-                    <Button Classes="Choix" Grid.Row="6">Démon</Button>
+                <TextBlock Grid.Row="0" Classes="middle h2" >Identité</TextBlock>
+                <TextBlock Name="CharacterNameTextBlock" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">Nom par défaut</TextBlock>
+                <Grid Name="NameGrid" Grid.Row="2" ColumnDefinitions="1*,1*">
+                    <TextBox Name="NameInput" Grid.Column="0" Margin="0,10,0,10" HorizontalAlignment="Center" VerticalAlignment="Center">ss</TextBox>
+                    <Button Grid.Column="1" Content="Valider" Classes="backgroundmiddle" Click="ButonConfirmName_OnClick"></Button>
                 </Grid>
                 
-                <Grid Grid.Row="4" RowDefinitions="2*,1*,1*,1*,1*,1*,1*">
-                    <TextBlock Grid.Row="0" VerticalAlignment="Bottom">Classe</TextBlock>
+                <Grid Name="RaceGrid" Grid.Row="3" RowDefinitions="2*,1*,1*,1*,1*,1*,1*">
+                    <TextBlock Grid.Row="0" Classes="leftpadding h3" VerticalAlignment="Bottom" >Race</TextBlock>
                     <Border>
                         
                     </Border>
-                    <Button Classes="Choix" Grid.Row="1">Guerrier</Button>
-                    <Button Classes="Choix" Grid.Row="2">Archer</Button>
-                    <Button Classes="Choix" Grid.Row="3">Mage</Button>
-                    <Button Classes="Choix" Grid.Row="4">Tank</Button>
-                    <Button Classes="Choix" Grid.Row="5">Soigneur</Button>
-                    <Button Classes="Choix" Grid.Row="6">Assassin</Button>
+                    <Button Classes="Choix" Click="OnRaceButtonClick" Grid.Row="1" Content="Humain"></Button>
+                    <Button Classes="Choix" Click="OnRaceButtonClick" Grid.Row="2" Content="Elfe"></Button>
+                    <Button Classes="Choix" Click="OnRaceButtonClick" Grid.Row="3" Content="Nain"></Button>
+                    <Button Classes="Choix" Click="OnRaceButtonClick" Grid.Row="4" Content="Orc"></Button>
+                    <Button Classes="Choix" Click="OnRaceButtonClick" Grid.Row="5" Content="Dragon"></Button>
+                    <Button Classes="Choix" Click="OnRaceButtonClick" Grid.Row="6" Content="Démon"></Button>
+                </Grid>
+                
+                <Grid Name="ClassGrid" Grid.Row="4" RowDefinitions="2*,1*,1*,1*,1*,1*,1*">
+                    <TextBlock Grid.Row="0" Classes="leftpadding h3" VerticalAlignment="Bottom">Classe</TextBlock>
+                    <Border>
+                        
+                    </Border>
+                    <Button Classes="Choix" Click="OnClassButtonClick" Grid.Row="1" Content="Guerrier"></Button>
+                    <Button Classes="Choix" Click="OnClassButtonClick" Grid.Row="2" Content="Voleur"></Button>
+                    <Button Classes="Choix" Click="OnClassButtonClick" Grid.Row="3" Content="Mage"></Button>
+                    <Button Classes="Choix" Click="OnClassButtonClick" Grid.Row="4" Content="Tank"></Button>
+                    <Button Classes="Choix" Click="OnClassButtonClick" Grid.Row="5" Content="Altruiste"></Button>
+                    <Button Classes="Choix" Click="OnClassButtonClick" Grid.Row="6" Content="Assassin"></Button>
                 </Grid>
                 
             </Grid>
@@ -80,12 +82,18 @@
                 </Grid.Background>
                 
                 <Border>
-                    <Grid RowDefinitions="2*,1*,1*,1*,1*,1*,1*,3*,1*,1*,1*">
+                    <Grid RowDefinitions="2*,1*,1*,1*,1*,1*,2*,3*,1*,2*,1*">
                         <TextBlock Classes="middle h2" FontSize="16" Grid.Row="0">Atribut</TextBlock>
-                        <TextBlock Classes="leftpading boldBodyText" Grid.Row="1">Force</TextBlock>
-                        <TextBlock Classes="leftpading boldBodyText" Grid.Row="2">Agilité</TextBlock>
-                        <TextBlock Classes="leftpading boldBodyText" Grid.Row="3">PV</TextBlock>
-                        <TextBlock Classes="leftpading boldBodyText" Grid.Row="4"></TextBlock>
+                        <TextBlock Name="ForceTextBlock" Classes="leftpading boldBodyText" Grid.Row="1">Force</TextBlock>
+                        <TextBlock Name="AgilityTextBlock" Classes="leftpading boldBodyText" Grid.Row="2">Agilité</TextBlock>
+                        <TextBlock Name="PVTextBlock" Classes="leftpading boldBodyText" Grid.Row="3">PV</TextBlock>
+                        <TextBlock Name="DefenceTextBlock" Classes="leftpading boldBodyText" Grid.Row="4">Defence</TextBlock>
+                        <TextBlock Name="IntelligenceTextBlock" Classes="leftpading boldBodyText" Grid.Row="5">Intelligence</TextBlock>
+                        <TextBlock Classes="middle h2" FontSize="16" Grid.Row="6">Bonus:</TextBlock>
+                        <TextBlock Name="BonusTextBlock" Classes="middle boldBodyText" Grid.Row="7"></TextBlock>
+                        <Button Name="StartAdventureButton" Grid.Row="9" Click="OnStartAdventureButtonClick" Content="Commencer l'aventure" Classes="unready"></Button>
+
+                        
                         
                         
                         
@@ -95,15 +103,30 @@
                 
             </Grid>
         </Grid>
+        <TextBlock Name="InformationBox" Grid.Row="2" Classes="middle boldBodyText"></TextBlock>
     </Grid>
     <UserControl.Styles>
         
         <Style Selector="Button.Choix">
-            <Setter Property="Background" Value="DarkSlateGray"></Setter>
+            <Setter Property="Background" Value="DarkGray"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>
             <Setter Property="Width" Value="100"></Setter>
             <Setter Property="Margin" Value="0,1"></Setter>
+        </Style>
+        <Style Selector="Button.backgroundmiddle">
+            <Setter Property="Background" Value="DarkGray"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        </Style>
+        <Style Selector="Button.ready">
+            <Setter Property="Background" Value="DarkGreen"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        </Style>
+        <Style Selector="Button.unready">
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
         </Style>
         <Style Selector="TextBlock.middle">
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>

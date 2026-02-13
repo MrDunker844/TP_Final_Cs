@@ -4,34 +4,46 @@ namespace AppRPG.Models;
 
 public abstract class Classe
 {
-    public string Nom { get; }
-    public int Vie { get; protected set; }
-    public int Force { get; protected set; }
-    public int Defense { get; protected set; }
-    public int Agilite { get; protected set; }
-    public int Intelligence { get; protected set; }
+    public string Name { get; }
+    public string Description { get; }
+    public string Bonus { get; }
+    public int Force { get; }
+    public int Agility { get; }
+    public int PV { get; }
+    public int Intelligence { get; }
+    public int Defence { get; }
+    public string Compatibility { get; }
+    public string Incompatibility { get; }
+    public Dictionary<string, int> CombinaisonBonus { get; }
+    public int UpgradePoints { get; }
 
-    protected Classe(string nom, int vie, int force, int defense, int agilite, int intelligence)
+    protected Classe(string name, string description, string bonus, int force, int agility,
+    int pv, int intelligence, int defence, string compatibility,string incompatibility,
+    Dictionary<string, int> combinaisonBonus = null,int upgradePoints = 0)
     {
-        Nom = nom;
-        Vie = vie;
+        Name = name;
+        Description = description;
+        Bonus = bonus;
         Force = force;
-        Defense = defense;
-        Agilite = agilite;
+        Agility = agility;
+        PV = pv;
         Intelligence = intelligence;
+        Defence = defence;
+        Compatibility = compatibility;
+        Incompatibility = incompatibility;
+        CombinaisonBonus = combinaisonBonus ?? new Dictionary<string, int>();// ?? veut dire si droite null alors gauche 
+        UpgradePoints = upgradePoints;
     }
 
-    /// <summary>
-    /// Retourne une description lisible de la classe (utilisable dans l’UI)
-    /// </summary>
+    
     public virtual string Presentation()
     {
         return
-            $"Classe : {Nom}\n" +
-            $"Vie : {Vie}\n" +
+            $"Classe : {Name}\n" +
+            $"Vie : {PV}\n" +
             $"Force : {Force}\n" +
-            $"Défense : {Defense}\n" +
-            $"Agilité : {Agilite}\n" +
+            $"Défense : {Defence}\n" +
+            $"Agilité : {Agility}\n" +
             $"Intelligence : {Intelligence}";
     }
 
@@ -39,15 +51,18 @@ public abstract class Classe
     {
         return new Dictionary<string, int>
         {
-            { "PV", Vie },
+            { "PV", PV },
             { "Strength", Force },
-            { "Defence", Defense },
-            { "Agility", Agilite },
+            { "Defence", Defence },
+            { "Agility", Agility },
             { "Intelligence", Intelligence }
         };
-
-
     }
+    public virtual int GetForce() => Force;
+    public virtual int GetAgility() => Agility;
+    public virtual int GetPV() => PV;
+    public virtual int GetIntelligence() => Intelligence;
+    public virtual int GetDefence() => Defence;
 
 
 
@@ -56,71 +71,117 @@ public abstract class Classe
 public class Guerrier : Classe
 {
     public Guerrier() : base(
-        nom: "Guerrier",
-        vie: 120,
+        name: "Guerrier",
+        description: "",
+        bonus: "",
         force: 15,
-        defense: 10,
-        agilite: 6,
-        intelligence: 4)
+        agility: 6,
+        pv: 12,
+        intelligence: 4,
+        defence: 10,
+        compatibility: "Orc",
+        incompatibility: "",
+        combinaisonBonus: new Dictionary<string, int>
+        {
+            { "PV", 2 },
+            { "Force", 5 }
+        },
+        upgradePoints: 5
+        )
     { }
 }
 
-public class Archer : Classe
+public class Voleur : Classe
 {
-    public Archer() : base(
-        nom: "Archer",
-        vie: 90,
+    public Voleur() : base(
+        name: "Voleur",
+        description: "",
+        bonus: "",
         force: 10,
-        defense: 6,
-        agilite: 14,
-        intelligence: 6)
+        agility: 14,
+        pv: 90,
+        intelligence: 6,
+        defence: 6,
+        compatibility: "Elfe",
+        incompatibility: "Nain",
+        combinaisonBonus: new Dictionary<string, int>
+        {
+            { "Agility", 3 },
+            { "Defence", 2 }
+        })
     { }
 }
 
 public class Mage : Classe
 {
     public Mage() : base(
-        nom: "Mage",
-        vie: 80,
+        name: "Mage",
+        description: "",
+        bonus: "",
         force: 4,
-        defense: 5,
-        agilite: 6,
-        intelligence: 16)
+        agility: 6,
+        pv: 80,
+        intelligence: 16,
+        defence: 5,
+        compatibility: "",
+        incompatibility: "Orc")
     { }
 }
 
 public class Tank : Classe
 {
     public Tank() : base(
-        nom: "Tank",
-        vie: 150,
+        name: "Tank",
+        description: "",
+        bonus: "",
         force: 8,
-        defense: 16,
-        agilite: 4,
-        intelligence: 4)
+        agility: 4,
+        pv: 150,
+        intelligence: 4,
+        defence: 16,
+        compatibility: "Nain",
+        incompatibility: "Elfe",
+        combinaisonBonus: new Dictionary<string, int>
+        {
+            { "PV", 4 },
+            { "Defence", 5 }
+        })
     { }
 }
 
-public class Soigneur : Classe
+public class Altruiste : Classe
 {
-    public Soigneur() : base(
-        nom: "Soigneur",
-        vie: 100,
+    public Altruiste() : base(
+        name: "Altruiste",
+        description: "",
+        bonus: "",
         force: 5,
-        defense: 7,
-        agilite: 6,
-        intelligence: 14)
+        agility: 6,
+        pv: 100,
+        intelligence: 14,
+        defence: 7,
+        compatibility: "",
+        incompatibility: "Demon")
     { }
 }
 
 public class Assassin : Classe
 {
     public Assassin() : base(
-        nom: "Assassin",
-        vie: 85,
+        name: "Assassin",
+        description: "",
+        bonus: "",
         force: 12,
-        defense: 5,
-        agilite: 18,
-        intelligence: 6)
+        agility: 18,
+        pv: 85,
+        intelligence: 6,
+        defence: 5,
+        compatibility: "Demon",
+        incompatibility: "",
+        combinaisonBonus: new Dictionary<string, int>
+        {
+            { "Force", 4 },
+            { "Agility", 6 }
+        })
     { }
 }

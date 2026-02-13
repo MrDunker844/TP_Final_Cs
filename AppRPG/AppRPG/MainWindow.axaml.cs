@@ -9,6 +9,7 @@ public partial class MainWindow : Window
     public PageAjoutPerso PremierePage = new PageAjoutPerso();
     public PageCreationPersonnage CreationPersonnage = new PageCreationPersonnage();
     public PageAttributs AttributCaracter = new PageAttributs();
+    public Competence Competences = new Competence();
     public CharacterCreationPage CharacCreationPage = new CharacterCreationPage();
     public MainWindow()
     {
@@ -20,5 +21,10 @@ public partial class MainWindow : Window
     {
         RootPanel.Children.Clear();
         RootPanel.Children.Add(CharacCreationPage);
+    }
+    public void AfficherCompetences()
+    {
+        RootPanel.Children.Clear();
+        RootPanel.Children.Add(Competences);
     }
 }
