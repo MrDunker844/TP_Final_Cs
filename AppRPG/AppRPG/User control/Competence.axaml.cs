@@ -1,6 +1,8 @@
+using System;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Avalonia.Media.Imaging;
 
 namespace AppRPG.User_control;
 
@@ -26,6 +28,7 @@ public partial class Competence : UserControl
         IntelligenceTextBlock.Text = MainCharacter.Intelligence.ToString();
         DefenceTextBlock.Text = MainCharacter.Defence.ToString();
         UpdateRemainedPoints();
+        UpdateRaceImage();
     }
 
     public void AddStat(object sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -142,5 +145,39 @@ public partial class Competence : UserControl
     public void UpdateRemainedPoints()
     {
         RemainedPoints.Text = "Points de compétence restants : " + MainCharacter.UpgradePoints;
+    }
+    public void TrowDice_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        if (MainCharacter.DiceThrow > 0)
+        {
+            Random random = new Random();
+            int dice1 = random.Next(1, 7);
+            int dice2 = random.Next(1, 7);
+            MainCharacter.DiceThrow -= 1;
+            RemainedTrows.Text = "Lancers de dés restants : " + MainCharacter.DiceThrow;
+            DiceImage1.Source = new Bitmap($"../../../TheAssets/image/dice{dice1}.jpg");
+            DiceImage2.Source = new Bitmap($"../../../TheAssets/image/dice{dice2}.jpg");
+            MainCharacter.UpgradePoints += dice1 + dice2;
+            UpdateRemainedPoints();
+            if (MainCharacter.DiceThrow <= 0)
+            {
+                TrowDice.Classes.Remove("ready");
+                TrowDice.Classes.Add("unready");
+            }
+            else
+            {
+                TrowDice.Classes.Remove("unready");
+                TrowDice.Classes.Add("ready");
+            }
+
+        }
+    }
+    private void UpdateRaceImage()
+    {
+        if (MainCharacter.SelectedRace != null)
+        {
+            string imagePath = $"../../../TheAssets/image/{MainCharacter.SelectedRace.Name}.png";
+            ImageCharacter.Source = new Bitmap(imagePath);
+        }
     }
 }

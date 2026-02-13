@@ -23,15 +23,19 @@
                                 Stretch="UniformToFill"
                                 Opacity="0.7"/>
                 </Grid.Background>
-                <TextBlock Grid.Row="0" Classes="middle h2" >Identité</TextBlock>
+                <TextBlock Grid.Row="0" Classes="middle h1" >Identité</TextBlock>
                 
-                <TextBlock Name="CharacterNameTextBlock" Grid.Row="1" Classes="middle h3"></TextBlock>
+                <TextBlock Name="CharacterNameTextBlock" Grid.Row="1" Classes="middle h2"></TextBlock>
                 
-                <TextBlock Name="CharacterRaceTextBlock" Grid.Row="2" Classes="middle h3"></TextBlock>
-                <TextBlock Name="CharacterClassTextBlock" Grid.Row="3" Classes="middle h3"></TextBlock>
+                <TextBlock Name="CharacterRaceTextBlock" Grid.Row="2" Classes="middle h2"></TextBlock>
+                <TextBlock Name="CharacterClassTextBlock" Grid.Row="3" Classes="middle h2"></TextBlock>
                 <Grid Grid.Row="4" Grid.RowDefinitions="1*,5*,2*">
-                    <TextBlock Grid.Row="0" Name="RemainedTrows" Classes="middle h3"></TextBlock>
-                    <Button Name="TrowDice" Grid.Row="2" Content="Lancer les dés" Classes="ready" ></Button>
+                    <TextBlock Grid.Row="0" Name="RemainedTrows" Classes="middle h2"></TextBlock>
+                        <Grid Grid.Row="1" ColumnDefinitions="1*,1*">
+                            <Image Name="DiceImage1" Grid.Column="0"></Image>
+                            <Image Name="DiceImage2" Grid.Column="1"></Image>
+                        </Grid>
+                    <Button Name="TrowDice" Grid.Row="2" Content="Lancer les dés" Classes="ready" Click="TrowDice_Click"></Button>
                 </Grid>
 
                 
@@ -63,36 +67,36 @@
                 
                 <Border>
                     <Grid RowDefinitions="3*,2*,2*,2*,2*,2*,2*,2*,3*,1*,2*,1*">
-                        <TextBlock Classes="middle h2" FontSize="16" Grid.Row="0">Atribut</TextBlock>
-                        <TextBlock Name="RemainedPoints" Grid.Row="1" Classes="middle h3"></TextBlock>
+                        <TextBlock Classes="middle h1" FontSize="16" Grid.Row="0">Atribut</TextBlock>
+                        <TextBlock Name="RemainedPoints" Grid.Row="1" Classes="middle h2"></TextBlock>
                         <Grid Name="ForceGrid" Grid.Row="2" ColumnDefinitions="1*,1*,1*,1*">
-                            <TextBlock Grid.Column="0" Classes="middle boldBodyText">Force</TextBlock>
+                            <TextBlock Grid.Column="0" Classes="middle bigboldBodyText">Force</TextBlock>
                             <Button Grid.Column="1" Name="ForceRemoveButton" Content="-" Classes="addAndRemove" Click="RemoveStat"></Button>
-                            <TextBlock Name="ForceTextBlock" Classes="middle boldBodyText" Grid.Column="2"></TextBlock>
+                            <TextBlock Name="ForceTextBlock" Classes="middle bigboldBodyText" Grid.Column="2"></TextBlock>
                             <Button Grid.Column="3" Name="ForceAddButton" Content="+"  Classes="addAndRemove" Click="AddStat"></Button>
                         </Grid>
                         <Grid Name="AgilityGrid" Grid.Row="3" ColumnDefinitions="1*,1*,1*,1*">
-                            <TextBlock Grid.Column="0" Classes="middle boldBodyText">Agilité</TextBlock>
+                            <TextBlock Grid.Column="0" Classes="middle bigboldBodyText">Agilité</TextBlock>
                             <Button Grid.Column="1" Name="AgilityRemoveButton" Content="-" Classes="addAndRemove" Click="RemoveStat"></Button>
-                            <TextBlock Name="AgilityTextBlock" Classes="middle boldBodyText" Grid.Column="2"></TextBlock>
+                            <TextBlock Name="AgilityTextBlock" Classes="middle bigboldBodyText" Grid.Column="2"></TextBlock>
                             <Button Grid.Column="3" Name="AgilityAddButton" Content="+" Classes="addAndRemove" Click="AddStat" ></Button>
                         </Grid>
                         <Grid Name="PVGrid" Grid.Row="4" ColumnDefinitions="1*,1*,1*,1*">
-                            <TextBlock Grid.Column="0" Classes="middle boldBodyText">PV</TextBlock>
+                            <TextBlock Grid.Column="0" Classes="middle bigboldBodyText">PV</TextBlock>
                             <Button Grid.Column="1" Name="PVRemoveButton" Content="-" Classes="addAndRemove" Click="RemoveStat"></Button>
-                            <TextBlock Name="PVTextBlock" Classes="middle boldBodyText" Grid.Column="2"></TextBlock>
+                            <TextBlock Name="PVTextBlock" Classes="middle bigboldBodyText" Grid.Column="2"></TextBlock>
                             <Button Grid.Column="3" Name="PVAddButton" Content="+" Classes="addAndRemove" Click="AddStat" ></Button>
                         </Grid>
                         <Grid Name="DefenceGrid" Grid.Row="5" ColumnDefinitions="1*,1*,1*,1*">
-                            <TextBlock Grid.Column="0" Classes="middle boldBodyText">Defence</TextBlock>
+                            <TextBlock Grid.Column="0" Classes="middle bigboldBodyText">Defence</TextBlock>
                             <Button Grid.Column="1" Name="DefenceRemoveButton" Content="-" Classes="addAndRemove" Click="RemoveStat"></Button>
-                            <TextBlock Name="DefenceTextBlock" Classes="middle boldBodyText" Grid.Column="2"></TextBlock>
+                            <TextBlock Name="DefenceTextBlock" Classes="middle bigboldBodyText" Grid.Column="2"></TextBlock>
                             <Button Grid.Column="3" Name="DefenceAddButton" Content="+" Classes="addAndRemove" Click="AddStat" ></Button>
                         </Grid>
                         <Grid Name="IntelligenceGrid" Grid.Row="6" ColumnDefinitions="1*,1*,1*,1*">
-                            <TextBlock Grid.Column="0" Classes="middle boldBodyText">Intelligence</TextBlock>
+                            <TextBlock Grid.Column="0" Classes="middle bigboldBodyText">Intelligence</TextBlock>
                             <Button Grid.Column="1" Name="IntelligenceRemoveButton" Content="-" Classes="addAndRemove" Click="RemoveStat"></Button>
-                            <TextBlock Name="IntelligenceTextBlock" Classes="middle boldBodyText" Grid.Column="2"></TextBlock>
+                            <TextBlock Name="IntelligenceTextBlock" Classes="middle bigboldBodyText" Grid.Column="2"></TextBlock>
                             <Button Grid.Column="3" Name="IntelligenceAddButton" Content="+" Classes="addAndRemove" Click="AddStat" ></Button>
                         </Grid>   
                     </Grid>
@@ -134,6 +138,10 @@
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
             <Setter Property="HorizontalAlignment" Value="Left"></Setter>
         </Style>
+        <Style Selector="TextBlock.h1">
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="FontWeight" Value="DemiBold"></Setter>
+        </Style>
         <Style Selector="TextBlock.h2">
             <Setter Property="FontSize" Value="16"></Setter>
             <Setter Property="FontWeight" Value="DemiBold"></Setter>
@@ -144,6 +152,10 @@
         </Style>
         <Style Selector="TextBlock.boldBodyText">
             <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="FontWeight" Value="DemiBold"></Setter>
+        </Style>
+        <Style Selector="TextBlock.bigboldBodyText">
+            <Setter Property="FontSize" Value="16"></Setter>
             <Setter Property="FontWeight" Value="DemiBold"></Setter>
         </Style>
         <Style Selector="Button.addAndRemove">

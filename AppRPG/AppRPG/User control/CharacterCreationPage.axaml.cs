@@ -47,7 +47,7 @@ public partial class CharacterCreationPage : UserControl
     public CharacterCreationPage()
     {
         InitializeComponent();
-        ImageCharacter.Source = new Bitmap("../../../TheAssets/image/mage.png");
+        ImageCharacter.Source = new Bitmap("../../../TheAssets/image/UnChoosed.png");
     }
     public void OnRaceButtonClick(object sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
@@ -73,6 +73,7 @@ public partial class CharacterCreationPage : UserControl
                 }
             }
         }
+        UpdateRaceImage();
     }
     public void OnClassButtonClick(object sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
@@ -182,5 +183,13 @@ public partial class CharacterCreationPage : UserControl
     private Character GetMainCharacter()
     {
         return MainCharacter;
+    }
+    private void UpdateRaceImage()
+    {
+        if (choosedRace != null)
+        {
+            string imagePath = $"../../../TheAssets/image/{choosedRace.Name}.png";
+            ImageCharacter.Source = new Bitmap(imagePath);
+        }
     }
 }

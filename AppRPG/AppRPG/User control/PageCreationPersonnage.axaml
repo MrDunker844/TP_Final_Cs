@@ -25,7 +25,7 @@
                 <!-- </Grid.Background> -->
                 <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" ><TextBlock>Creation de votre personnage</TextBlock></StackPanel>
                 <Grid Row="1"  RowDefinitions="8*,2*">
-                    <Image Name="IconePersonnageCreation"  Grid.Row="0" Source="../TheAssets/image/mage.png" Stretch="Uniform"></Image>
+                    <Image Name="IconePersonnageCreation"  Grid.Row="0" Source="../TheAssets/image/UnChoosed.png" Stretch="Uniform"></Image>
                     <TextBlock Name="NomPersonnageCreation" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">Nom par default</TextBlock>
                 </Grid>
         
