@@ -93,11 +93,6 @@
                         <TextBlock Name="BonusTextBlock" Classes="middle boldBodyText" Grid.Row="7"></TextBlock>
                         <Button Name="StartAdventureButton" Grid.Row="9" Click="OnStartAdventureButtonClick" Content="Commencer l'aventure" Classes="unready"></Button>
 
-                        
-                        
-                        
-                        
-                        
                     </Grid>
                 </Border>
                 

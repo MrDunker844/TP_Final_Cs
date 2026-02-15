@@ -1,0 +1,21 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AppRPG.User_control.MainMenu">
+
+
+    <Border Background="#1A1A1A" Padding="40" CornerRadius="10">
+        <StackPanel Spacing="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <TextBlock Text="MENU PRINCIPAL" Foreground="Gold" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center"/>
+
+            <TextBlock Text="Gérez les statistiques de votre héros et préparez-vous pour l'aventure." Foreground="#D3C4B4" FontSize="14" TextWrapping="Wrap" TextAlignment="Center" Width="300"/>
+
+            <Button Content="CREER VOTRE PERSONNAGE" Click="GoToCreation" Padding="20,10" Background="#3D2B1F" Foreground="White" BorderBrush="#A37E2C" BorderThickness="2" HorizontalAlignment="Center" CornerRadius="5"/>
+
+        </StackPanel>
+    </Border>
+
+</UserControl>

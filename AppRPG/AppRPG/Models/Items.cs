@@ -1,3 +1,5 @@
+using System;
+
 namespace AppRPG.Models;
 
 public class Item
@@ -6,9 +8,17 @@ public class Item
     public string Description { get; }
     public int DurabilityMax { get; protected set; }
     public int DurabilityCurrent { get; protected set; }
-    public int Rarity { get; }
+    public String Rarity { get; }
+    protected static readonly string[] rarities = { "Commun", "Rare", "Épique", "Légendaire" };
+    protected static readonly Random random = new Random();
 
-    public Item(string name, string description, int durabilityMax, int durabilityCurrent, int rarity)
+    public Item(
+        string name,
+        string description,
+        int durabilityMax,
+        int durabilityCurrent,
+        String rarity
+    )
     {
         Name = name;
         Description = description;
@@ -19,152 +29,128 @@ public class Item
 
     public virtual string DescriptionItem()
     {
-        return
-            $"Item : {Name}\n" +
-            $"Description : {Description}\n" +
-            $"Durabilité : {DurabilityCurrent}/{DurabilityMax}\n" +
-            $"Rareté : {Rarity}";
+        return $"Item : {Name}\n"
+            + $"Description : {Description}\n"
+            + $"Durabilité : {DurabilityCurrent}/{DurabilityMax}\n"
+            + $"Rareté : {Rarity}";
     }
 }
-
-// -------------------- POTIONS --------------------
 
 public class HealPotion : Item
 {
     public int HealAmount { get; }
 
-    public HealPotion() : base(
-        name: "Potion de soin",
-        description: "Restaure des points de vie.",
-        durabilityMax: 1,
-        durabilityCurrent: 1,
-        rarity: 2)
+    public HealPotion()
+        : base(
+            name: "HealPotion",
+            description: "Restaure des points de vie.",
+            durabilityMax: 1,
+            durabilityCurrent: 1,
+            rarity: rarities[random.Next(rarities.Length)]
+        )
     {
         HealAmount = 50;
     }
 
-    public override string DescriptionItem()
-        => base.DescriptionItem() + $"\nSoin : +{HealAmount} PV";
+    public override string DescriptionItem() =>
+        base.DescriptionItem() + $"\nSoin : +{HealAmount} PV";
 }
 
 public class StrengthPotion : Item
 {
     public int StrengthBonus { get; }
 
-    public StrengthPotion() : base(
-        name: "Potion de force",
-        description: "Augmente la force temporairement.",
-        durabilityMax: 1,
-        durabilityCurrent: 1,
-        rarity: 3)
+    public StrengthPotion()
+        : base(
+            name: "StrengthPotion",
+            description: "Augmente la force temporairement.",
+            durabilityMax: 1,
+            durabilityCurrent: 1,
+            rarity: rarities[random.Next(rarities.Length)]
+        )
     {
         StrengthBonus = 5;
     }
 
-    public override string DescriptionItem()
-        => base.DescriptionItem() + $"\nForce : +{StrengthBonus}";
+    public override string DescriptionItem() =>
+        base.DescriptionItem() + $"\nForce : +{StrengthBonus}";
 }
 
-// -------------------- ARMES --------------------
-
-public class Weapon
+public class AgilityPotion : Item
 {
-    public string Name { get; }
-    public string Description { get; }
-    public int Damage { get; }
-    public int DurabilityMax { get; protected set; }
-    public int DurabilityCurrent { get; protected set; }
-    public int Rarity { get; }
+    public int AgilityBonus { get; }
 
-    public Weapon(string name, string description, int damage, int durabilityMax, int durabilityCurrent, int rarity)
+    public AgilityPotion()
+        : base(
+            name: "AgilityPotion",
+            description: "Augmente l'agilité temporairement.",
+            durabilityMax: 1,
+            durabilityCurrent: 1,
+            rarity: rarities[random.Next(rarities.Length)]
+        )
     {
-        Name = name;
-        Description = description;
-        Damage = damage;
-        DurabilityMax = durabilityMax;
-        DurabilityCurrent = durabilityCurrent;
-        Rarity = rarity;
+        AgilityBonus = 5;
     }
 
-    public virtual string DescriptionWeapon()
+    public override string DescriptionItem() =>
+        base.DescriptionItem() + $"\nAgilité : +{AgilityBonus}";
+}
+
+public class IntelligencePotion : Item
+{
+    public int IntelligenceBonus { get; }
+
+    public IntelligencePotion()
+        : base(
+            name: "IntelligencePotion",
+            description: "Augmente l'intelligence temporairement.",
+            durabilityMax: 1,
+            durabilityCurrent: 1,
+            rarity: rarities[random.Next(rarities.Length)]
+        )
     {
-        return
-            $"Arme : {Name}\n" +
-            $"Description : {Description}\n" +
-            $"Dégâts : {Damage}\n" +
-            $"Durabilité : {DurabilityCurrent}/{DurabilityMax}\n" +
-            $"Rareté : {Rarity}";
+        IntelligenceBonus = 5;
     }
+
+    public override string DescriptionItem() =>
+        base.DescriptionItem() + $"\nIntelligence : +{IntelligenceBonus}";
 }
 
-public class Sword : Weapon
+public class DefensePotion : Item
 {
-    public Sword() : base(
-        name: "Épée",
-        description: "Une épée tranchante en acier.",
-        damage: 50,
-        durabilityMax: 100,
-        durabilityCurrent: 100,
-        rarity: 3)
-    { }
+    public int DefenseBonus { get; }
+
+    public DefensePotion()
+        : base(
+            name: "DefensePotion",
+            description: "Augmente la défense temporairement.",
+            durabilityMax: 1,
+            durabilityCurrent: 1,
+            rarity: rarities[random.Next(rarities.Length)]
+        )
+    {
+        DefenseBonus = 5;
+    }
+
+    public override string DescriptionItem() =>
+        base.DescriptionItem() + $"\nDéfense : +{DefenseBonus}";
 }
 
-public class Bow : Weapon
+public class GodPotion : Item
 {
-    public Bow() : base(
-        name: "Arc",
-        description: "Un arc précis pour les attaques à distance.",
-        damage: 40,
-        durabilityMax: 90,
-        durabilityCurrent: 90,
-        rarity: 2)
-    { }
-}
+    public int ManaAmount { get; }
 
-public class Staff : Weapon
-{
-    public Staff() : base(
-        name: "Bâton",
-        description: "Un bâton magique amplifiant les sorts.",
-        damage: 45,
-        durabilityMax: 80,
-        durabilityCurrent: 80,
-        rarity: 3)
-    { }
-}
+    public GodPotion()
+        : base(
+            name: "GodPotion",
+            description: "Augmente toutes les stats temporairement.",
+            durabilityMax: 1,
+            durabilityCurrent: 1,
+            rarity: rarities[random.Next(rarities.Length)]
+        )
+    {
+        ManaAmount = 30;
+    }
 
-public class Dagger : Weapon
-{
-    public Dagger() : base(
-        name: "Dague",
-        description: "Une lame courte, rapide et discrète.",
-        damage: 35,
-        durabilityMax: 70,
-        durabilityCurrent: 70,
-        rarity: 2)
-    { }
-}
-
-public class Axe : Weapon
-{
-    public Axe() : base(
-        name: "Hache",
-        description: "Une arme lourde infligeant de gros dégâts.",
-        damage: 60,
-        durabilityMax: 90,
-        durabilityCurrent: 90,
-        rarity: 3)
-    { }
-}
-
-public class Mace : Weapon
-{
-    public Mace() : base(
-        name: "Masse",
-        description: "Une masse contondante en métal.",
-        damage: 65,
-        durabilityMax: 85,
-        durabilityCurrent: 85,
-        rarity: 3)
-    { }
+    public override string DescriptionItem() => base.DescriptionItem() + $"\nMana : +{ManaAmount}";
 }

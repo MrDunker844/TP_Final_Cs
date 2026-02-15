@@ -173,7 +173,7 @@ public partial class CharacterCreationPage : UserControl
 
             if (this.VisualRoot is MainWindow mainWindow)
             {
-                mainWindow.AfficherCompetences();
+                mainWindow.ShowCompetences();
                 mainWindow.Competences.InitializeValues();
             }
 

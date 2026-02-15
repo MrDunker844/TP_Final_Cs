@@ -18,6 +18,13 @@ public partial class Competence : UserControl
     public void InitializeValues()
     {
         MainCharacter = CharacterCreationPage.MainCharacter;
+        updateCharacter();
+        UpdateRemainedPoints();
+        UpdateRaceImage();
+    }
+
+    public void updateCharacter()
+    {
         CharacterNameTextBlock.Text = "Nom : " + MainCharacter.Name;
         CharacterRaceTextBlock.Text = "Race : " + MainCharacter.SelectedRace.Name;
         CharacterClassTextBlock.Text = "Classe : " + MainCharacter.SelectedClass.Name;
@@ -27,8 +34,6 @@ public partial class Competence : UserControl
         PVTextBlock.Text = MainCharacter.PV.ToString();
         IntelligenceTextBlock.Text = MainCharacter.Intelligence.ToString();
         DefenceTextBlock.Text = MainCharacter.Defence.ToString();
-        UpdateRemainedPoints();
-        UpdateRaceImage();
     }
 
     public void AddStat(object sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -78,6 +83,7 @@ public partial class Competence : UserControl
                 }
             }
         }
+        updateGotoresumeButton();
     }
 
     public void RemoveStat(object sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -146,6 +152,7 @@ public partial class Competence : UserControl
     {
         RemainedPoints.Text = "Points de compétence restants : " + MainCharacter.UpgradePoints;
     }
+
     public void TrowDice_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         if (MainCharacter.DiceThrow > 0)
@@ -169,15 +176,40 @@ public partial class Competence : UserControl
                 TrowDice.Classes.Remove("unready");
                 TrowDice.Classes.Add("ready");
             }
-
         }
     }
+
     private void UpdateRaceImage()
     {
         if (MainCharacter.SelectedRace != null)
         {
             string imagePath = $"../../../TheAssets/image/{MainCharacter.SelectedRace.Name}.png";
             ImageCharacter.Source = new Bitmap(imagePath);
+        }
+    }
+
+    private void GoToResume(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        if (MainCharacter.UpgradePoints == 0 && MainCharacter.DiceThrow == 0)
+        {
+            if (this.VisualRoot is MainWindow mainWindow)
+            {
+                mainWindow.ShowResume(MainCharacter);
+            }
+        }
+    }
+
+    private void updateGotoresumeButton()
+    {
+        if (MainCharacter.UpgradePoints == 0 && MainCharacter.DiceThrow == 0)
+        {
+            GoToResumeButton.Classes.Remove("unready");
+            GoToResumeButton.Classes.Add("ready");
+        }
+        else
+        {
+            GoToResumeButton.Classes.Remove("ready");
+            GoToResumeButton.Classes.Add("unready");
         }
     }
 }

@@ -1,0 +1,136 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AppRPG.User_control.Resume">
+    <Grid RowDefinitions="*" ColumnDefinitions="1*,1*,1*" >
+        <Grid.Background>
+            <ImageBrush Source="avares://AppRpg/TheAssets/image/Rock.jpg"
+                        Stretch="UniformToFill"
+                        Opacity="0.8"/>
+        </Grid.Background>
+        <Grid Grid.Column="0" RowDefinitions="1*,8*,1*" >
+            <Grid RowDefinitions="8*,2*" Grid.Row="1" >
+                <Border Grid.Row="0" BorderBrush="#A37E2C" BorderThickness="4" CornerRadius="2" Padding="3" Background="#5D4037" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Border BorderBrush="#2D1B10" BorderThickness="3" Background="#1A1A1A" Padding="15">
+                        <Image Name="CharacterImage" Source="" Width="200" Height="200" RenderOptions.BitmapInterpolationMode="None" />
+                    </Border>
+                </Border>
+                <Border Background="#3D2B1F" BorderBrush="#2A1A0F" BorderThickness="2" CornerRadius="0" Padding="10,5" Margin="5,0" Grid.Row="1">
+                    <Grid RowDefinitions="1*,1*">
+                        <TextBlock Grid.Row="0" Name="CharacterName" Classes="middle h1 yellow"></TextBlock>
+                        <TextBlock Grid.Row="1" Name="CharacterRaceAndClass" Classes="middle h3 " Foreground="#E0E0E0"></TextBlock>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Column="1" RowDefinitions="1*,8*,1*" >
+            <Border Grid.Row="1"  BorderThickness="3" CornerRadius="5" Margin="15" >
+                <Grid RowDefinitions="6*,4*,4*,4*,4*,4*" >
+                    <TextBlock  Classes="middle yellow h1" VerticalAlignment="Top" Margin="0,15,0,0" >Stats</TextBlock>
+                    <Border Background="#2A2A2A" BorderBrush="#1A1A1A" BorderThickness="1" CornerRadius="10" Margin="0,2" Grid.Row="1"></Border>
+                    <Border Background="#2A2A2A" BorderBrush="#1A1A1A" BorderThickness="1" CornerRadius="10" Margin="0,2" Grid.Row="2"></Border>
+                    <Border Background="#2A2A2A" BorderBrush="#1A1A1A" BorderThickness="1" CornerRadius="10" Margin="0,2" Grid.Row="3"></Border>
+                    <Border Background="#2A2A2A" BorderBrush="#1A1A1A" BorderThickness="1" CornerRadius="10" Margin="0,2" Grid.Row="4"></Border>
+                    <Border Background="#2A2A2A" BorderBrush="#1A1A1A" BorderThickness="1" CornerRadius="10" Margin="0,2" Grid.Row="5"></Border>
+                    <TextBlock Name="ForceTextBlock" Classes="leftpading boldBodyText yellow" Grid.Row="1">Force</TextBlock>
+                    <TextBlock Name="AgilityTextBlock" Classes="leftpading boldBodyText yellow" Grid.Row="2">Agilité</TextBlock>
+                    <TextBlock Name="PVTextBlock" Classes="leftpading boldBodyText yellow" Grid.Row="3">PV</TextBlock>
+                    <TextBlock Name="DefenceTextBlock" Classes="leftpading boldBodyText yellow" Grid.Row="4">Defence</TextBlock>
+                    <TextBlock Name="IntelligenceTextBlock" Classes="leftpading boldBodyText yellow" Grid.Row="5">Intelligence</TextBlock>
+                </Grid>
+
+            </Border>
+
+        </Grid>
+
+        <Grid RowDefinitions="1*,8*,1*" Grid.Column="2">
+            <Border Grid.Row="1" Background="#221A15" BorderBrush="#4E342E" BorderThickness="3" CornerRadius="5" Margin="15">
+                <Grid RowDefinitions="1*,2*,1*,2*" >
+                    <TextBlock Grid.Row="0"  Classes="middle yellow h1" VerticalAlignment="Top"  Margin="0,10,0,0">Resumé de vos choix</TextBlock>
+                    <TextBlock Grid.Row="1" Name="ResumeTextBlock" Classes="leftpading boldBodyText yellow " TextWrapping="Wrap"></TextBlock>
+                    <TextBlock Grid.Row="2" Name="IventoryTitle" Classes="middle h1 yellow">Vos items</TextBlock>
+                    <Grid Grid.Row="3">
+                        <Border Width="110" Height="110" Name="ItemRarityBorder" BorderBrush="#0070DD" BorderThickness="2" Background="#0A0F14" CornerRadius="5" Padding="5">
+                            <Image Name="ItemImage" Width="100" Height="100" Source=""/>
+                        </Border>
+                    </Grid>
+
+                </Grid>
+            </Border>
+
+        </Grid>
+
+
+    </Grid>
+    <UserControl.Styles>
+
+        <Style Selector="Button.Choix">
+            <Setter Property="Background" Value="DarkGray"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Width" Value="100"></Setter>
+            <Setter Property="Margin" Value="0,1"></Setter>
+        </Style>
+        <Style Selector="Button.backgroundmiddle">
+            <Setter Property="Background" Value="DarkGray"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        </Style>
+        <Style Selector="Button.ready">
+            <Setter Property="Background" Value="DarkGreen"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        </Style>
+        <Style Selector="Button.unready">
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        </Style>
+        <Style Selector="TextBlock.middle">
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        </Style>
+        <Style Selector="TextBlock.leftpading">
+            <Setter Property="Padding" Value="20,0,0,0"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        </Style>
+        <Style Selector="TextBlock.h1">
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="FontWeight" Value="DemiBold"></Setter>
+        </Style>
+        <Style Selector="TextBlock.h2">
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="FontWeight" Value="DemiBold"></Setter>
+        </Style>
+        <Style Selector="TextBlock.h3">
+            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="FontWeight" Value="DemiBold"></Setter>
+        </Style>
+        <Style Selector="TextBlock.boldBodyText">
+            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="FontWeight" Value="DemiBold"></Setter>
+        </Style>
+        <Style Selector="TextBlock.bigboldBodyText">
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="FontWeight" Value="DemiBold"></Setter>
+        </Style>
+        <Style Selector="TextBlock.yellow">
+            <Setter Property="Foreground" Value="Gold"></Setter>
+        </Style>
+        <Style Selector="Button.addAndRemove">
+            <Setter Property="Width" Value="30"></Setter>
+            <Setter Property="Height" Value="30"></Setter>
+            <Setter Property="Background" Value="#D3D3D3"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="CornerRadius" Value="15"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="BorderThickness" Value="1"></Setter>
+            <Setter Property="BorderBrush" Value="#808080"></Setter>
+        </Style>
+
+    </UserControl.Styles>
+</UserControl>

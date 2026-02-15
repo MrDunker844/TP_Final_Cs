@@ -16,10 +16,23 @@ public abstract class Classe
     public string Incompatibility { get; }
     public Dictionary<string, int> CombinaisonBonus { get; }
     public int UpgradePoints { get; }
+    public Item Potion { get; }
 
-    protected Classe(string name, string description, string bonus, int force, int agility,
-    int pv, int intelligence, int defence, string compatibility,string incompatibility,
-    Dictionary<string, int> combinaisonBonus = null,int upgradePoints = 0)
+    protected Classe(
+        string name,
+        string description,
+        string bonus,
+        int force,
+        int agility,
+        int pv,
+        int intelligence,
+        int defence,
+        string compatibility,
+        string incompatibility,
+        Item potion,
+        Dictionary<string, int> combinaisonBonus = null,
+        int upgradePoints = 0
+    )
     {
         Name = name;
         Description = description;
@@ -31,20 +44,19 @@ public abstract class Classe
         Defence = defence;
         Compatibility = compatibility;
         Incompatibility = incompatibility;
-        CombinaisonBonus = combinaisonBonus ?? new Dictionary<string, int>();// ?? veut dire si droite null alors gauche 
+        CombinaisonBonus = combinaisonBonus ?? new Dictionary<string, int>(); // ?? veut dire si droite null alors gauche
         UpgradePoints = upgradePoints;
+        Potion = potion;
     }
 
-    
     public virtual string Presentation()
     {
-        return
-            $"Classe : {Name}\n" +
-            $"Vie : {PV}\n" +
-            $"Force : {Force}\n" +
-            $"Défense : {Defence}\n" +
-            $"Agilité : {Agility}\n" +
-            $"Intelligence : {Intelligence}";
+        return $"Classe : {Name}\n"
+            + $"Vie : {PV}\n"
+            + $"Force : {Force}\n"
+            + $"Défense : {Defence}\n"
+            + $"Agilité : {Agility}\n"
+            + $"Intelligence : {Intelligence}";
     }
 
     public Dictionary<string, int> getAttributes()
@@ -55,133 +67,130 @@ public abstract class Classe
             { "Strength", Force },
             { "Defence", Defence },
             { "Agility", Agility },
-            { "Intelligence", Intelligence }
+            { "Intelligence", Intelligence },
         };
     }
+
     public virtual int GetForce() => Force;
+
     public virtual int GetAgility() => Agility;
+
     public virtual int GetPV() => PV;
+
     public virtual int GetIntelligence() => Intelligence;
+
     public virtual int GetDefence() => Defence;
-
-
-
 }
 
 public class Guerrier : Classe
 {
-    public Guerrier() : base(
-        name: "Guerrier",
-        description: "",
-        bonus: "",
-        force: 15,
-        agility: 6,
-        pv: 12,
-        intelligence: 4,
-        defence: 10,
-        compatibility: "Orc",
-        incompatibility: "",
-        combinaisonBonus: new Dictionary<string, int>
-        {
-            { "PV", 2 },
-            { "Force", 5 }
-        },
-        upgradePoints: 5
-        )
-    { }
+    public Guerrier()
+        : base(
+            name: "Guerrier",
+            description: "",
+            bonus: "",
+            force: 15,
+            agility: 6,
+            pv: 12,
+            intelligence: 4,
+            defence: 10,
+            compatibility: "Orc",
+            incompatibility: "",
+            combinaisonBonus: new Dictionary<string, int> { { "PV", 2 }, { "Force", 5 } },
+            upgradePoints: 5,
+            potion: new StrengthPotion()
+        ) { }
 }
 
 public class Voleur : Classe
 {
-    public Voleur() : base(
-        name: "Voleur",
-        description: "",
-        bonus: "",
-        force: 10,
-        agility: 14,
-        pv: 90,
-        intelligence: 6,
-        defence: 6,
-        compatibility: "Elfe",
-        incompatibility: "Nain",
-        combinaisonBonus: new Dictionary<string, int>
-        {
-            { "Agility", 3 },
-            { "Defence", 2 }
-        })
-    { }
+    public Voleur()
+        : base(
+            name: "Voleur",
+            description: "",
+            bonus: "",
+            force: 10,
+            agility: 14,
+            pv: 90,
+            intelligence: 6,
+            defence: 6,
+            compatibility: "Elfe",
+            incompatibility: "Nain",
+            combinaisonBonus: new Dictionary<string, int> { { "Agility", 3 }, { "Defence", 2 } },
+            potion: new AgilityPotion()
+        ) { }
 }
 
 public class Mage : Classe
 {
-    public Mage() : base(
-        name: "Mage",
-        description: "",
-        bonus: "",
-        force: 4,
-        agility: 6,
-        pv: 80,
-        intelligence: 16,
-        defence: 5,
-        compatibility: "",
-        incompatibility: "Orc")
-    { }
+    public Mage()
+        : base(
+            name: "Mage",
+            description: "",
+            bonus: "",
+            force: 4,
+            agility: 6,
+            pv: 80,
+            intelligence: 16,
+            defence: 5,
+            compatibility: "",
+            incompatibility: "Orc",
+            potion: new IntelligencePotion()
+        ) { }
 }
 
 public class Tank : Classe
 {
-    public Tank() : base(
-        name: "Tank",
-        description: "",
-        bonus: "",
-        force: 8,
-        agility: 4,
-        pv: 150,
-        intelligence: 4,
-        defence: 16,
-        compatibility: "Nain",
-        incompatibility: "Elfe",
-        combinaisonBonus: new Dictionary<string, int>
-        {
-            { "PV", 4 },
-            { "Defence", 5 }
-        })
-    { }
+    public Tank()
+        : base(
+            name: "Tank",
+            description: "",
+            bonus: "",
+            force: 8,
+            agility: 4,
+            pv: 150,
+            intelligence: 4,
+            defence: 16,
+            compatibility: "Nain",
+            incompatibility: "Elfe",
+            combinaisonBonus: new Dictionary<string, int> { { "PV", 4 }, { "Defence", 5 } },
+            potion: new DefensePotion()
+        ) { }
 }
 
 public class Altruiste : Classe
 {
-    public Altruiste() : base(
-        name: "Altruiste",
-        description: "",
-        bonus: "",
-        force: 5,
-        agility: 6,
-        pv: 100,
-        intelligence: 14,
-        defence: 7,
-        compatibility: "",
-        incompatibility: "Demon")
-    { }
+    public Altruiste()
+        : base(
+            name: "Altruiste",
+            description: "",
+            bonus: "",
+            force: 5,
+            agility: 6,
+            pv: 100,
+            intelligence: 14,
+            defence: 7,
+            compatibility: "",
+            incompatibility: "Demon",
+            potion: new HealPotion()
+        ) { }
 }
 
 public class Assassin : Classe
 {
-    public Assassin() : base(
-        name: "Assassin",
-        description: "",
-        bonus: "",
-        force: 12,
-        agility: 18,
-        pv: 85,
-        intelligence: 6,
-        defence: 5,
-        compatibility: "Demon",
-        incompatibility: "",
-        combinaisonBonus: new Dictionary<string, int>
-        {
-            { "Force", 4 },
-            { "Agility", 6 }
-        })
-    { }
+    public Assassin()
+        : base(
+            name: "Assassin",
+            description: "",
+            bonus: "",
+            force: 12,
+            agility: 18,
+            pv: 85,
+            intelligence: 6,
+            defence: 5,
+            compatibility: "Demon",
+            incompatibility: "",
+            combinaisonBonus: new Dictionary<string, int> { { "Force", 4 }, { "Agility", 6 } },
+            potion: new StrengthPotion()
+        ) { }
 }

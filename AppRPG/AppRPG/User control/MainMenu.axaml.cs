@@ -1,27 +1,22 @@
-using System;
-using System.IO;
-using System.Runtime;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 
-namespace AppRPG;
+namespace AppRPG.User_control;
 
-public partial class PageAjoutPerso : UserControl
+public partial class MainMenu : UserControl
 {
-    
-    public PageAjoutPerso()
+    public MainMenu()
     {
         InitializeComponent();
     }
 
-    private void BoutonAjoutPerso_OnClick(object? sender, RoutedEventArgs e)
+    private void GoToCreation(object? sender, RoutedEventArgs e)
     {
         if (this.VisualRoot is MainWindow mainWindow)
         {
             mainWindow.ShowCharacterCreation();
         }
-
     }
 }
