@@ -87,7 +87,7 @@ public class Guerrier : Classe
     public Guerrier()
         : base(
             name: "Guerrier",
-            description: "",
+            description: "Un combattant puissant et courageux spécialisé dans le combat rapproché.",
             bonus: "",
             force: 15,
             agility: 6,
@@ -107,7 +107,7 @@ public class Voleur : Classe
     public Voleur()
         : base(
             name: "Voleur",
-            description: "",
+            description: "Un roublard agile et discret qui frappe rapidement dans les ombres.",
             bonus: "",
             force: 10,
             agility: 14,
@@ -126,7 +126,7 @@ public class Mage : Classe
     public Mage()
         : base(
             name: "Mage",
-            description: "",
+            description: "Un maître des arcanes capable de lancer des sorts dévastateurs.",
             bonus: "",
             force: 4,
             agility: 6,
@@ -144,7 +144,7 @@ public class Tank : Classe
     public Tank()
         : base(
             name: "Tank",
-            description: "",
+            description: "Un protecteur robuste et inébranlable, maître de la défense.",
             bonus: "",
             force: 8,
             agility: 4,
@@ -163,7 +163,7 @@ public class Altruiste : Classe
     public Altruiste()
         : base(
             name: "Altruiste",
-            description: "",
+            description: "Un soigneur dédié au bien-être et à la guérison de ses compagnons.",
             bonus: "",
             force: 5,
             agility: 6,
@@ -181,7 +181,7 @@ public class Assassin : Classe
     public Assassin()
         : base(
             name: "Assassin",
-            description: "",
+            description: "Un tueur silencieux et mortel, maître de la vitesse et de la précision.",
             bonus: "",
             force: 12,
             agility: 18,

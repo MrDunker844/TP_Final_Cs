@@ -11,10 +11,10 @@
                         Opacity="0.8"/>
         </Grid.Background>
 
-         <Grid Grid.Row="0">
-             
-             <TextBlock FontWeight="Bold" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center">CREATION DU HEROS</TextBlock>
-         </Grid>
+        <Grid Grid.Row="0">
+
+            <TextBlock FontWeight="Bold" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center">CREATION DU HEROS</TextBlock>
+        </Grid>
         <Grid ColumnDefinitions="1*,5*,5*,5*,1*"  RowDefinitions="14*,1*" Grid.Row="1">
             <Grid RowDefinitions="4*,2*,1*,10*,10*" Grid.Column="1"  Margin="10,0">
                 <Grid.Background>
@@ -25,14 +25,14 @@
                 <TextBlock Grid.Row="0" Classes="middle h2" >Identité</TextBlock>
                 <TextBlock Name="CharacterNameTextBlock" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">Nom par défaut</TextBlock>
                 <Grid Name="NameGrid" Grid.Row="2" ColumnDefinitions="1*,1*">
-                    <TextBox Name="NameInput" Grid.Column="0" Margin="0,10,0,10" HorizontalAlignment="Center" VerticalAlignment="Center">ss</TextBox>
+                    <TextBox Name="NameInput" Grid.Column="0" Margin="0,10,0,10" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBox>
                     <Button Grid.Column="1" Content="Valider" Classes="backgroundmiddle" Click="ButonConfirmName_OnClick"></Button>
                 </Grid>
-                
+
                 <Grid Name="RaceGrid" Grid.Row="3" RowDefinitions="2*,1*,1*,1*,1*,1*,1*">
                     <TextBlock Grid.Row="0" Classes="leftpadding h3" VerticalAlignment="Bottom" >Race</TextBlock>
                     <Border>
-                        
+
                     </Border>
                     <Button Classes="Choix" Click="OnRaceButtonClick" Grid.Row="1" Content="Humain"></Button>
                     <Button Classes="Choix" Click="OnRaceButtonClick" Grid.Row="2" Content="Elfe"></Button>
@@ -41,11 +41,11 @@
                     <Button Classes="Choix" Click="OnRaceButtonClick" Grid.Row="5" Content="Dragon"></Button>
                     <Button Classes="Choix" Click="OnRaceButtonClick" Grid.Row="6" Content="Démon"></Button>
                 </Grid>
-                
+
                 <Grid Name="ClassGrid" Grid.Row="4" RowDefinitions="2*,1*,1*,1*,1*,1*,1*">
                     <TextBlock Grid.Row="0" Classes="leftpadding h3" VerticalAlignment="Bottom">Classe</TextBlock>
                     <Border>
-                        
+
                     </Border>
                     <Button Classes="Choix" Click="OnClassButtonClick" Grid.Row="1" Content="Guerrier"></Button>
                     <Button Classes="Choix" Click="OnClassButtonClick" Grid.Row="2" Content="Voleur"></Button>
@@ -54,33 +54,33 @@
                     <Button Classes="Choix" Click="OnClassButtonClick" Grid.Row="5" Content="Altruiste"></Button>
                     <Button Classes="Choix" Click="OnClassButtonClick" Grid.Row="6" Content="Assassin"></Button>
                 </Grid>
-                
+
             </Grid>
-            
+
             <Grid Grid.Column="2" Margin="10,0">
-                
+
                 <Grid.Background>
                     <ImageBrush Source="../TheAssets/image/BackgroundGrey.jpg"
                                 Stretch="UniformToFill"
                                 Opacity="0.7"/>
-                    
+
                 </Grid.Background>
-                
+
                 <Border>
                     <Image Name="ImageCharacter"></Image>
                 </Border>
-                
+
             </Grid>
-            
+
             <Grid Grid.Column="3" Margin="10,0">
-                
+
                 <Grid.Background>
                     <ImageBrush Source="../TheAssets/image/BackgroundFire.png"
                                 Stretch="UniformToFill"
                                 Opacity="0.7"/>
-                    
+
                 </Grid.Background>
-                
+
                 <Border>
                     <Grid RowDefinitions="2*,1*,1*,1*,1*,1*,2*,3*,1*,2*,1*">
                         <TextBlock Classes="middle h2" FontSize="16" Grid.Row="0">Atribut</TextBlock>
@@ -95,13 +95,13 @@
 
                     </Grid>
                 </Border>
-                
+
             </Grid>
         </Grid>
         <TextBlock Name="InformationBox" Grid.Row="2" Classes="middle boldBodyText"></TextBlock>
     </Grid>
     <UserControl.Styles>
-        
+
         <Style Selector="Button.Choix">
             <Setter Property="Background" Value="DarkGray"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
@@ -144,9 +144,9 @@
             <Setter Property="FontSize" Value="12"></Setter>
             <Setter Property="FontWeight" Value="DemiBold"></Setter>
         </Style>
-        
+
     </UserControl.Styles>
-    
-    
+
+
 </UserControl>
 
