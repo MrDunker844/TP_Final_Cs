@@ -50,7 +50,7 @@ public partial class Resume : UserControl
         ResumeTextBlock.Text =
             $"Vous avez choisi la race {MainCharacter.SelectedRace.Name} : {MainCharacter.SelectedRace.Description} \n"
             + $"Votre classe {MainCharacter.SelectedClass.Name} : {MainCharacter.SelectedClass.Description}. \n"
-            + $"Votre potion de classe est : {MainCharacter.SelectedClass.Potion.Name}. et sa rareté est : {MainCharacter.SelectedClass.Potion.Rarity}.";
+            + $"Votre potion de classe est : {MainCharacter.SelectedClass.Potion.Name} et sa rareté est : {MainCharacter.SelectedClass.Potion.Rarity}.";
     }
 
     public void updateItem()

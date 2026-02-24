@@ -146,6 +146,8 @@ public partial class Competence : UserControl
                     break;
             }
         }
+
+        updateGotoresumeButton();
     }
 
     public void UpdateRemainedPoints()
